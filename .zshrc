@@ -15,7 +15,7 @@ source "${ZINIT_HOME}/zinit.zsh"
 
 ### --- HISTORY ---------------------------------------------
 export HISTFILE=~/.histfile
-export HISTSIZE=1000
+export HISTSIZE=5000
 export SAVEHIST=$HISTSIZE
 export HISTDUP=erase
 
@@ -102,7 +102,7 @@ alias reload="source $HOME/.zshrc"
 alias myip="curl http://ipecho.net/plain; echo"
 
 # --- INITIALIZATIONS -------------------------------------
-eval "$(~/.local/bin/mise activate zsh)"
+eval "$(/usr/bin/mise activate zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
 
