@@ -1,0 +1,32 @@
+[user]
+	name = Lukas Rastinger
+	email = lukas.rastinger@gmail.com
+[core]
+	editor = nvim
+	excludesfile = /home/rasti/.gitignore_global
+	pager = delta
+[init]
+	defaultBranch = main
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true    # use n and N to move between diff sections
+    light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+[merge]
+    conflictstyle = diff3
+[diff]
+    colorMoved = default
+[alias]
+	pr = pull --rebase
+	st = status -s
+	cge = config --global --edit
+	ci = commit
+	co = checkout
+	cod = checkout .
+	rh = reset HEAD
+	aa = add -A
+	cdf = clean -df
+	br = branch
+	bra = branch -a
+	amend = commit -a --amend --no-edit
+	ciam = commit -a --amend --no-edit
