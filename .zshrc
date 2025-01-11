@@ -70,6 +70,11 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
 
+# Man and help page styling with bat
+export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"
+alias -g -- -h='-h 2>&1 | bat --language=help --style=plain'
+alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'
+
 # export MANPAGER="less -R --use-color -Dd+r -Du+b" # syntax highlighting for man pages using less
 
 ## --- ALIASES ----------------------------------------------
@@ -100,5 +105,4 @@ alias myip="curl http://ipecho.net/plain; echo"
 eval "$(~/.local/bin/mise activate zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
-eval "$(batman --export-env)"
 
