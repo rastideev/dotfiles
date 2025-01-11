@@ -102,7 +102,6 @@ alias reload="source $HOME/.zshrc"
 alias myip="curl http://ipecho.net/plain; echo"
 
 # --- INITIALIZATIONS -------------------------------------
-eval "$(/usr/bin/mise activate zsh)"
+eval "$($HOME/.local/bin/mise activate zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
-
