@@ -13,6 +13,10 @@ fi
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
 
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+
+
 ### --- HISTORY ---------------------------------------------
 export HISTFILE=~/.histfile
 export HISTSIZE=5000
@@ -35,7 +39,7 @@ zinit light z-shell/F-Sy-H
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 # zinit light Aloxaf/fzf-tab
-zinit light unixorn/fzf-zsh-plugin
+# zinit light unixorn/fzf-zsh-plugin
 
 # Snippets
 zinit snippet OMZP::sudo
