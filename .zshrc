@@ -56,8 +56,6 @@ setopt autocd extendedglob
 
 unsetopt beep
 
-bindkey -v
-
 bindkey "^H"      backward-kill-word # CTRL + Backspace 
 bindkey "^[[H"    beginning-of-line  # CTRL + -->
 bindkey "^[[F"    end-of-line        # CTRL + <--

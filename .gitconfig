@@ -1,3 +1,5 @@
+[include]
+	path = ~/.config/delta/catppuccin.gitconfig
 [user]
 	name = Lukas Rastinger
 	email = lukas.rastinger@gmail.com
@@ -12,6 +14,7 @@
 [delta]
     navigate = true    # use n and N to move between diff sections
     light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+    features = catppuccin-mocha
 [merge]
     conflictstyle = diff3
 [diff]

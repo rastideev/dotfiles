@@ -1,6 +1,7 @@
 ### --- SYSTEM CONFIGURATION ----------------------------------------
 
 export $(envsubst < $HOME/.env)
+export QT_QPA_PLATFORMTHEME="qt5ct"  
 
 ### --- ANDROID -----------------------------------------------------
 
