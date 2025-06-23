@@ -1,3 +1,3 @@
-[submodule "/home/rasti/.config/nvim"]
-	path = /home/rasti/.config/nvim
+[submodule ".config/nvim"]
+	path = .config/nvim
 	url = https://github.com/rastideev/nvim.git
