@@ -10,6 +10,9 @@ if [ ! -d "$ZINIT_HOME" ]; then
   git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 fi
 
+# Source mise, has to be done here to find all needed commands installed with it
+eval "$(mise activate zsh)"
+
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
 
@@ -91,7 +94,7 @@ export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND --type d"
 # --- Add color ---
 alias grep="grep --color=auto"
 alias ls="ls --color=auto"
-alias fd="fd --color=always"
+alias fd="fdfind --color=always"
 
 alias ll="ls -laXv --group-directories-first"
 alias la="ls -A"
@@ -104,6 +107,5 @@ alias reload="source $HOME/.zshrc"
 alias myip="curl http://ipecho.net/plain; echo"
 
 # --- INITIALIZATIONS -------------------------------------
-eval "$($HOME/.local/bin/mise activate zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
