@@ -1,0 +1,169 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  // Empty pane, set of keybindings that are available when there is no active editor
+  {
+    "context": "EmptyPane || SharedScreen",
+    "bindings": {
+      // Open file finder
+      "space space": "file_finder::Toggle",
+      "space s f": "file_finder::Toggle",
+      // Open recent project
+      "space s p": "projects::OpenRecent",
+    },
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "space e": "workspace::ToggleLeftDock",
+      // https://github.com/zed-industries/zed/issues/4753
+      // https://github.com/zed-industries/zed/issues/4270
+      "escape": "project_panel::ToggleFocus",
+      "enter": "project_panel::Open",
+      "v": "project_panel::OpenSplitVertical",
+      "q": "project_panel::Toggle",
+      "o": "project_panel::NewDirectory",
+      "a": "project_panel::NewFile",
+      "r": "project_panel::Rename",
+      "x": "project_panel::Cut",
+      "y": "project_panel::Copy",
+      "p": "project_panel::Paste",
+      "d": "project_panel::Delete",
+      "\\": "project_panel::CollapseAllEntries",
+      // Directory expansion
+      "l": "project_panel::ExpandSelectedEntry",
+      "h": "project_panel::CollapseSelectedEntry",
+      // Move up and down
+      "k": "menu::SelectPrevious",
+      "j": "menu::SelectNext",
+    },
+  },
+  {
+    "context": "GitPanel",
+    "bindings": {
+      "escape": "git_panel::ToggleFocus",
+      "q": "git_panel::Close",
+      "t": "git_panel::ToggleTreeView",
+    },
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-e": "file_finder::Toggle",
+    },
+  },
+  {
+    "context": "Editor && (vim_mode == normal || vim_mode == visual) && !VimWaiting && !menu",
+    "bindings": {
+      // put key-bindings here if you want them to work in normal & visual mode
+      // === Git
+      "space g h d": "editor::ToggleSelectedDiffHunks",
+      "space g g": "git_panel::ToggleFocus",
+      // === Toggle
+      "space t i": "editor::ToggleInlayHints",
+      "space t w": "editor::ToggleSoftWrap",
+      "space t l": "workspace::ToggleCenteredLayout",
+      // === Markdown
+      // Open markdown preview
+      "space m p": "markdown::OpenPreview",
+      "space m P": "markdown::OpenPreviewToTheSide",
+      // === Search
+      // Open recent project
+      "space s p": "projects::OpenRecent",
+      // Open file finder
+      "space space": "file_finder::Toggle",
+      "space s f": "file_finder::Toggle",
+      // Search word under cursor
+      "space s w": "pane::DeploySearch",
+      // Search on current buffer
+      "space s b": "buffer_search::Deploy",
+      // === AI
+      "space a a": "agent::ToggleFocus",
+      // Go to file with `gf`
+      "g f": "editor::OpenExcerpts",
+      // === Editor
+      "shift-j": "editor::JoinLines",
+      "alt-k": "editor::DuplicateLineUp",
+      "alt-j": "editor::DuplicateLineDown",
+      "ctrl-K": "editor::MoveLineUp",
+      "ctrl-J": "editor::MoveLineDown",
+    },
+  },
+  {
+    "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
+    "bindings": {
+      // === Panel toggles
+      "space e": "pane::RevealInProjectPanel",
+      "ctrl-/": "workspace::ToggleBottomDock",
+      // === Formating
+      "space f m": "editor::Format",
+      "space f o": "editor::OrganizeImports",
+      // === Code actions
+      "space c a": "editor::ToggleCodeActions",
+      "space .": "editor::ToggleCodeActions",
+      "space c r": "editor::Rename",
+      // === Tab shortcuts
+      "shift-l": "pane::ActivateNextItem",
+      "shift-h": "pane::ActivatePreviousItem",
+      "space v": "pane::SplitRight",
+      "space w": "pane::CloseActiveItem",
+      "space b d": "pane::CloseActiveItem",
+      // Close other items
+      "space b o": "pane::CloseOtherItems",
+      // Close all items
+      "space b a": "pane::CloseAllItems",
+    },
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      "alt-h": "vim::Left",
+      "alt-l": "vim::Right",
+      "alt-j": "vim::Down",
+      "alt-k": "vim::Up",
+      "j k": "vim::NormalBefore",
+    },
+  },
+  {
+    "context": "Editor && vim_mode == visual",
+    "bindings": {
+      "shift-j": "editor::MoveLineDown",
+      "shift-k": "editor::MoveLineUp",
+    },
+  },
+  {
+    // CamelCase navigation => considers capitalized words
+    "context": "VimControl && !menu && vim_mode != operator",
+    "bindings": {
+      "w": "vim::NextSubwordStart",
+      "b": "vim::PreviousSubwordStart",
+      "e": "vim::NextSubwordEnd",
+      "g e": "vim::PreviousSubwordEnd",
+    },
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-/": "workspace::ToggleBottomDock",
+    },
+  },
+  {
+    "context": "Dock",
+    "bindings": {
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      // ... or other keybindings
+    },
+  },
+]
