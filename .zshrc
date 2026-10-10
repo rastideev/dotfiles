@@ -1,3 +1,6 @@
+# Add to ~/.zshrc
+export PATH="$HOME/.local/bin:$HOME/.local/scripts:$PATH"   
+
 ###
 ### --- ZINIT -----------------------------------------------
 ###
@@ -10,8 +13,11 @@ if [ ! -d "$ZINIT_HOME" ]; then
   git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 fi
 
+# --- INITIALIZATIONS -------------------------------------
 # Source mise, has to be done here to find all needed commands installed with it
 eval "$(mise activate zsh)"
+eval "$(zoxide init --cmd cd zsh)"
+eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
 
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
@@ -105,7 +111,3 @@ alias config="nvim $ZSH"
 alias projects="cd $HOME/dev"
 alias reload="source $HOME/.zshrc"
 alias myip="curl http://ipecho.net/plain; echo"
-
-# --- INITIALIZATIONS -------------------------------------
-eval "$(zoxide init --cmd cd zsh)"
-eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
